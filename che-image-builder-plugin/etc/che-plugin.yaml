@@ -1,0 +1,7 @@
+containers:
+ - name: image-builder
+   image: azatsarynnyy/buildah:latest
+   volumes:
+       - mountPath: "/projects"
+         name: projects
+   memory-limit: "1536M"
