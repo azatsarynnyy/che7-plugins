@@ -1,7 +1,10 @@
 containers:
  - name: image-builder
    image: azatsarynnyy/buildah:latest
+   env:
+       - name: BUILDAH_ISOLATION
+         value: chroot
    volumes:
        - mountPath: "/projects"
          name: projects
-   memory-limit: "512M"
+   memory-limit: "1024M"
