@@ -31,5 +31,5 @@ containers:
    ports:
        - exposedPort: 3100
        - exposedPort: 3130
-   memory-limit: "1536M"
+   memoryLimit: "1536M"
 
