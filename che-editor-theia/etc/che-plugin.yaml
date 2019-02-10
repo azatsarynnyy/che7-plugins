@@ -15,7 +15,7 @@ endpoints:
       type: ide-dev
 containers:
  - name: theia-ide
-   image: azatsarynnyy/che-theia:kube
+   image: azatsarynnyy/che-theia:0.3.19-kubectl
    env:
        - name: THEIA_PLUGINS
          value: local-dir:///plugins
@@ -31,5 +31,5 @@ containers:
    ports:
        - exposedPort: 3100
        - exposedPort: 3130
-   memory-limit: "1536M"
+   memoryLimit: "1536M"
 
