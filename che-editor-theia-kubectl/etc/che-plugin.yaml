@@ -1,0 +1,35 @@
+endpoints:
+ -  name: "theia"
+    public: true
+    targetPort: 3100
+    attributes:
+      protocol: http
+      type: ide
+      secure: true
+      cookiesAuthEnabled: true
+ -  name: "theia-dev"
+    public: true
+    targetPort: 3130
+    attributes:
+      protocol: http
+      type: ide-dev
+containers:
+ - name: theia-ide
+   image: azatsarynnyy/che-theia-kubectl:latest
+   env:
+       - name: THEIA_PLUGINS
+         value: local-dir:///plugins
+       - name: HOSTED_PLUGIN_HOSTNAME
+         value: 0.0.0.0
+       - name: HOSTED_PLUGIN_PORT
+         value: 3130
+   volumes:
+       - mountPath: "/plugins"
+         name: plugins
+       - mountPath: "/projects"
+         name: projects
+   ports:
+       - exposedPort: 3100
+       - exposedPort: 3130
+   memoryLimit: "1536M"
+
