@@ -12,7 +12,8 @@ FROM eclipse/che-theia:next
 
 ENV KUBECTL_VERSION v1.13.4
 
-WORKDIR /usr/local/bin
+# WORKDIR /usr/local/bin
+WORKDIR /home/theia
 
 RUN wget https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl && \
     chmod +x ./kubectl
