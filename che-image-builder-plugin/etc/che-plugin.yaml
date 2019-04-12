@@ -1,6 +1,6 @@
 containers:
  - name: image-builder
-   image: azatsarynnyy/buildah:latest
+   image: azatsarynnyy/buildah-ubi7:latest
    volumes:
        - mountPath: "/projects"
          name: projects
